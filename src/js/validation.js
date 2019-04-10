@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+/*document.addEventListener("DOMContentLoaded", function(event) {
 
     let taSoeur = document.getElementById("isbn");
 
@@ -22,4 +22,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     };
 
-});
+});*/
+
+document.getElementById("isbn").cha = function () {
+    console.log("in");
+    let isbn = document.getElementById("isbn");
+
+    isbn.addEventListener("", function (event) {
+        if (isbn.validity.typeMismatch) {
+            isbn.setCustomValidity("I expect an e-mail, darling!");
+        } else {
+            isbn.setCustomValidity("BLC");
+        }
+    });
+};
