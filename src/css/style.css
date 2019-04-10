@@ -12,3 +12,9 @@ body {
 .formulaireIntit {
     color:blue;
 }
+
+.cadre {
+    border-width: 2px;
+    border-color: chocolate;
+    border-style: solid;
+}
