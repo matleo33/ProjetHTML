@@ -1,0 +1,14 @@
+body {
+    font-family: "Helvetica";
+    color:navy;
+    background-color: #FFFFFF;
+    font-size: 18px
+}
+
+.form {
+    font-weight: bold;
+}
+
+.formulaireIntit {
+    color:blue;
+}
