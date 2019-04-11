@@ -24,7 +24,7 @@
 
 });*/
 
-document.getElementById("isbn").cha = function () {
+document.getElementById("isbn").onChange = function () {
     console.log("in");
     let isbn = document.getElementById("isbn");
 
