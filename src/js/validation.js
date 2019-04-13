@@ -46,11 +46,12 @@ document.getElementById("annulation").onclick = function () {
 function afficher() {
     if(ouvrages.length !== 0) {
         let zoneTexte = document.getElementById("resume");
-        let texte = "";
+        let texte = "Saisie d'un ouvrage effectué !\n";
         let oeuvre = ouvrages[ouvrages.length-1];
         for (let carac in oeuvre) {
-            texte += carac + " : " + oeuvre[carac] + '\n';
+            texte += carac + " : " + oeuvre[carac] + "\n";
         }
         zoneTexte.innerText = texte;
+        zoneTexte.value.replace(/n/g,'<br>');
     }
 }
