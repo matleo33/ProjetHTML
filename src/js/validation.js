@@ -1,16 +1,16 @@
-let oeuvres = [];
+let ouvrages = [];
 
 window.onload = function() {
-    let myForm = document.getElementById('formulaire');
+    let formulaire = document.getElementById("formulaire");
 
-    myForm.addEventListener('submit', function (e) {
-        let errors = [];
-        if(errors.length === 0) {
+    formulaire.addEventListener("submit", function (e) {
+        let erreurs = [];
+        if(erreurs.length === 0) {
             e.preventDefault(); // The browser will not make the HTTP POST request
             let reference = document.getElementById("reference").value;
             let titre = document.getElementById("titre").value;
-            let auteurs = document.getElementById("auteurs").value;
-            let editeurs = document.getElementById("editeurs").value;
+            let auteur = document.getElementById("auteur").value;
+            let editeur = document.getElementById("editeur").value;
             let edition = document.getElementById("edition").value;
             let annneEdition = document.getElementById("anneeEdition").value;
             let isbn = document.getElementById("isbn").value;
@@ -19,9 +19,38 @@ window.onload = function() {
             let excluPret = document.getElementById("excluPret").value;
             let commentaire = document.getElementById("commentaires").value;
 
-            let oeuvre = {Reference:reference, Titre:titre, Auteur:auteurs, Editeurs:editeurs, Edition:edition, AnnneEdition:annneEdition,
-                ISBN:isbn, NbExemplaires:nbExemplaires, Disponibilite:disponibilite, ExcluPret:excluPret, Commentaire:commentaire};
-            oeuvres.push(oeuvre);
+            let oeuvre = [];
+            oeuvre["Reference"] = reference;
+            oeuvre["Titre"] = titre;
+            oeuvre["Auteur"] = auteur;
+            oeuvre["Editeur"] = editeur;
+            oeuvre["Edition"] = edition;
+            oeuvre["AnneeEdition"] = annneEdition;
+            oeuvre["ISBN"] = isbn;
+            oeuvre["NbExemplaires"] = nbExemplaires;
+            oeuvre["Disponibilite"] = disponibilite;
+            oeuvre["ExcluPret"] = excluPret;
+            oeuvre["Commentaire"] = commentaire;
+            ouvrages.push(oeuvre);
+
+            formulaire.reset();
+            afficher();
         }
     });
 };
+
+document.getElementById("annulation").onclick = function () {
+    document.getElementById("formulaire").reset();
+};
+
+function afficher() {
+    if(ouvrages.length !== 0) {
+        let zoneTexte = document.getElementById("resume");
+        let texte = "";
+        let oeuvre = ouvrages[ouvrages.length-1];
+        for (let carac in oeuvre) {
+            texte += carac + " : " + oeuvre[carac] + '\n';
+        }
+        zoneTexte.innerText = texte;
+    }
+}

@@ -12,7 +12,7 @@
         <tbody>
         <tr>
             <td>Référence :</td>
-            <td><input id="reference" type="text" required></td>
+            <td><input id="reference" type="text" pattern="\w*[a-zA-Z]\w*" required></td>
         </tr>
         <tr>
             <td>Titre :</td>
@@ -20,11 +20,11 @@
         </tr>
         <tr>
             <td>Auteur(s) :</td>
-            <td><input id="auteurs" type="text" required></td>
+            <td><input id="auteur" type="text" required></td>
         </tr>
         <tr>
             <td>Editeur :</td>
-            <td><input id="editeurs" type="text" required></td>
+            <td><input id="editeur" type="text" required></td>
         </tr>
         <tr>
             <td>Edition :</td>
@@ -32,7 +32,7 @@
         </tr>
         <tr>
             <td>Année d'édition :</td>
-            <td><input id="anneEdition" type="number" required></td>
+            <td><input id="anneeEdition" type="number" required></td>
         </tr>
         <tr>
             <td>ISBN :</td>
@@ -59,7 +59,7 @@
             <td><input id="annulation" type="button" value="Annulation"></td>
         </tr>
         <tr>
-            <td colspan="2"><textarea name="resume" disabled="disabled"></textarea></td>
+            <td colspan="2"><textarea id="resume" disabled="disabled"></textarea></td>
         </tr>
         </tbody>
     </table>
