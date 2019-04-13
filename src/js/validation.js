@@ -3,12 +3,8 @@ let oeuvres = [];
 window.onload = function() {
     let myForm = document.getElementById('formulaire');
 
-// Add a listener to the submit event
     myForm.addEventListener('submit', function (e) {
         let errors = [];
-
-        // Check inputs...
-
         if(errors.length === 0) {
             e.preventDefault(); // The browser will not make the HTTP POST request
             let reference = document.getElementById("reference").value;
