@@ -6,57 +6,57 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-<form class="cadre" name="formulaire">
+<form class="cadre" name="formulaire" id="formulaire" onsubmit="return false">
     <table>
         <thead>Formulaire de saisie d'un ouvrage</thead>
         <tbody>
         <tr>
             <td>Référence :</td>
-            <td><input></td>
+            <td><input id="reference" type="text" required></td>
         </tr>
         <tr>
             <td>Titre :</td>
-            <td><input name="reference" type="text"></td>
+            <td><input id="titre" type="text" required></td>
         </tr>
         <tr>
             <td>Auteur(s) :</td>
-            <td><input name="auteurs" type="text"></td>
+            <td><input id="auteurs" type="text" required></td>
         </tr>
         <tr>
             <td>Editeur :</td>
-            <td><input name="editeurs" type="text"></td>
+            <td><input id="editeurs" type="text" required></td>
         </tr>
         <tr>
             <td>Edition :</td>
-            <td><input name="edition" type="text"></td>
+            <td><input id="edition" type="text" required></td>
         </tr>
         <tr>
             <td>Année d'édition :</td>
-            <td><input name="anneEdition" type="number"></td>
+            <td><input id="anneeEdition" type="number" required></td>
         </tr>
         <tr>
             <td>ISBN :</td>
-            <td><input name="isbn" id="isbn" type="number"></td>
+            <td><input id="isbn" type="number" required></td>
         </tr>
         <tr>
             <td>Nombre d'exemplaires :</td>
-            <td><input name="nbExemplaires" type="number"></td>
+            <td><input id="nbExemplaires" type="number" required></td>
         </tr>
         <tr>
             <td>Disponibilité :</td>
-            <td><input name="disponibilite" type="checkbox"></td>
+            <td><input id="disponibilite" type="checkbox"></td>
         </tr>
         <tr>
             <td>Exclu du prêt :</td>
-            <td><input name="excluPret" type="checkbox"></td>
+            <td><input id="excluPret" type="checkbox"></td>
         </tr>
         <tr>
             <td>Commentaires :</td>
-            <td><input name="commentaires" type="text"></td>
+            <td><input id="commentaires" type="text"></td>
         </tr>
         <tr>
-            <td><input name="valider" type="button" value="Valider la saisie"></td>
-            <td><input name="annulation" type="button" value="Annulation"></td>
+            <td><input id="valider" type="submit" value="Valider la saisie"></td>
+            <td><input id="annulation" type="button" value="Annulation"></td>
         </tr>
         <tr>
             <td colspan="2"><textarea name="resume" disabled="disabled"></textarea></td>
