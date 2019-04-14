@@ -66,7 +66,7 @@ function afficherValeurs () {
 function afficherTextArea() {
     if(ouvrages.length !== 0) {
         let zoneTexte = document.getElementById("resume");
-        let texte = "Saisie d'un ouvrage effectué !\n";
+        let texte = "Saisie d'un ouvrage effectuée !\n";
         let oeuvre = ouvrages[ouvrages.length-1];
         for (let carac in oeuvre) {
             texte += carac + " : " + oeuvre[carac] + "\n";
