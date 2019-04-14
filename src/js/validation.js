@@ -41,6 +41,61 @@ window.onload = function() {
             formulaire.reset();
             afficherTextArea();
             afficherSelect();
+            let tmp = document.createElement("tr");
+
+            let tdRef = document.createElement("td");
+            tdRef.innerText=oeuvre["Reference"];
+            tmp.appendChild(tdRef);
+
+            let tdTitre = document.createElement("td");
+            tdTitre.innerText=oeuvre["Titre"];
+            tmp.appendChild(tdTitre);
+
+            let tdAuteur = document.createElement("td");
+            tdAuteur.innerText=oeuvre["Auteur"];
+            tmp.appendChild(tdAuteur);
+
+            let tdEditeur = document.createElement("td");
+            tdEditeur.innerText=oeuvre["Editeur"];
+            tmp.appendChild(tdEditeur);
+
+            let tdEdition = document.createElement("td");
+            tdEdition.innerText=oeuvre["Edition"];
+            tmp.appendChild(tdEdition);
+
+            let tdAnnee = document.createElement("td");
+            tdAnnee.innerText=oeuvre["AnneeEdition"];
+            tmp.appendChild(tdAnnee);
+
+            let tdISBN = document.createElement("td");
+            tdISBN.innerText=oeuvre["ISBN"];
+            tmp.appendChild(tdISBN);
+
+            let tdNb = document.createElement("td");
+            tdNb.innerText = oeuvre["NbExemplaires"];
+            tmp.appendChild(tdNb);
+
+            let tdDispo = document.createElement("td");
+            if (oeuvre["Disponibilite"] === true) {
+                tdDispo.innerText="Oui";
+            } else {
+                tdDispo.innerText="Non";
+            }
+            tmp.appendChild(tdDispo);
+
+            let tdExclu = document.createElement("td");
+            if (oeuvre["ExcluPret"] === true) {
+                tdExclu.innerText="Oui";
+            } else {
+                tdExclu.innerText="Non";
+            }
+            tmp.appendChild(tdExclu);
+
+            let tdComm = document.createElement("td");
+            tdComm.innerText = oeuvre["Commentaire"];
+            tmp.appendChild(tdComm);
+
+            document.getElementById("tabOeuvre").appendChild(tmp);
         }
     });
 };
