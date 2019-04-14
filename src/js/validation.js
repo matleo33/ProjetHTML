@@ -95,7 +95,7 @@ window.onload = function() {
             tdComm.innerText = oeuvre["Commentaire"];
             tmp.appendChild(tdComm);
 
-            document.getElementById("tabOeuvre").appendChild(tmp);
+            document.getElementById("tabOeuvres").appendChild(tmp);
         }
     });
 };
