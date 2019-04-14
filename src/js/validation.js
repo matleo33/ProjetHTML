@@ -1,9 +1,15 @@
-let ouvrages = [];
-let indexModifie = null;
+let ouvrages = []; // Tableau de stockage des ouvrages insérés
+let indexModifie = null; // Variable permettant au programme de mémoriser quel est l'oeuvre en cours de modification
 
+/* Fonction principale du programme
+ * Appel : dès que le bouton "Valider la saisie" est utiliser
+ * Sauvegarde toutes les données du formulaire
+ * Appel les fonctions d'affichage
+ */
 window.onload = function() {
     let formulaire = document.getElementById("formulaire");
 
+    //Ajoute ce code au bouton "Valider la saisie"
     formulaire.addEventListener("submit", function (e) {
         let erreurs = [];
         if(erreurs.length === 0) {
@@ -41,72 +47,91 @@ window.onload = function() {
             formulaire.reset();
             afficherTextArea();
             afficherSelect();
-            let tmp = document.createElement("tr");
-
-            let tdRef = document.createElement("td");
-            tdRef.innerText=oeuvre["Reference"];
-            tmp.appendChild(tdRef);
-
-            let tdTitre = document.createElement("td");
-            tdTitre.innerText=oeuvre["Titre"];
-            tmp.appendChild(tdTitre);
-
-            let tdAuteur = document.createElement("td");
-            tdAuteur.innerText=oeuvre["Auteur"];
-            tmp.appendChild(tdAuteur);
-
-            let tdEditeur = document.createElement("td");
-            tdEditeur.innerText=oeuvre["Editeur"];
-            tmp.appendChild(tdEditeur);
-
-            let tdEdition = document.createElement("td");
-            tdEdition.innerText=oeuvre["Edition"];
-            tmp.appendChild(tdEdition);
-
-            let tdAnnee = document.createElement("td");
-            tdAnnee.innerText=oeuvre["AnneeEdition"];
-            tmp.appendChild(tdAnnee);
-
-            let tdISBN = document.createElement("td");
-            tdISBN.innerText=oeuvre["ISBN"];
-            tmp.appendChild(tdISBN);
-
-            let tdNb = document.createElement("td");
-            tdNb.innerText = oeuvre["NbExemplaires"];
-            tmp.appendChild(tdNb);
-
-            let tdDispo = document.createElement("td");
-            console.log(oeuvre['Disponibilite']);
-            if (oeuvre["Disponibilite"] === true) {
-                tdDispo.innerText="Oui";
-            } else {
-                tdDispo.innerText="Non";
-            }
-            tmp.appendChild(tdDispo);
-
-            let tdExclu = document.createElement("td");
-            if (oeuvre["ExcluPret"] === true) {
-                tdExclu.innerText="Oui";
-            } else {
-                tdExclu.innerText="Non";
-            }
-            tmp.appendChild(tdExclu);
-
-            let tdComm = document.createElement("td");
-            tdComm.innerText = oeuvre["Commentaire"];
-            tmp.appendChild(tdComm);
-
-            document.getElementById("tabOeuvres").appendChild(tmp);
+            afficherTableau();
         }
     });
 };
 
+// Affiche le tablea contenant tous les ouvrages
+function afficherTableau() {
+    let tabOeuvres = document.getElementById("tabOeuvres");
+    if(tabOeuvres !== null) {
+        while (tabOeuvres.firstChild) {
+            tabOeuvres.removeChild(tabOeuvres.firstChild);
+        }
+    }
+    ouvrages.forEach(function (oeuvre) {
+        let tmp = document.createElement("tr");
+
+        let tdRef = document.createElement("td");
+        tdRef.innerText=oeuvre["Reference"];
+        tmp.appendChild(tdRef);
+
+        let tdTitre = document.createElement("td");
+        tdTitre.innerText=oeuvre["Titre"];
+        tmp.appendChild(tdTitre);
+
+        let tdAuteur = document.createElement("td");
+        tdAuteur.innerText=oeuvre["Auteur"];
+        tmp.appendChild(tdAuteur);
+
+        let tdEditeur = document.createElement("td");
+        tdEditeur.innerText=oeuvre["Editeur"];
+        tmp.appendChild(tdEditeur);
+
+        let tdEdition = document.createElement("td");
+        tdEdition.innerText=oeuvre["Edition"];
+        tmp.appendChild(tdEdition);
+
+        let tdAnnee = document.createElement("td");
+        tdAnnee.innerText=oeuvre["AnneeEdition"];
+        tmp.appendChild(tdAnnee);
+
+        let tdISBN = document.createElement("td");
+        tdISBN.innerText=oeuvre["ISBN"];
+        tmp.appendChild(tdISBN);
+
+        let tdNb = document.createElement("td");
+        tdNb.innerText = oeuvre["NbExemplaires"];
+        tmp.appendChild(tdNb);
+
+        let tdDispo = document.createElement("td");
+        console.log(oeuvre['Disponibilite']);
+        if (oeuvre["Disponibilite"] === true) {
+            tdDispo.innerText="Oui";
+        } else {
+            tdDispo.innerText="Non";
+        }
+        tmp.appendChild(tdDispo);
+
+        let tdExclu = document.createElement("td");
+        if (oeuvre["ExcluPret"] === true) {
+            tdExclu.innerText="Oui";
+        } else {
+            tdExclu.innerText="Non";
+        }
+        tmp.appendChild(tdExclu);
+
+        let tdComm = document.createElement("td");
+        tdComm.innerText = oeuvre["Commentaire"];
+        tmp.appendChild(tdComm);
+
+        tabOeuvres.appendChild(tmp);
+    });
+}
+
+/* Supprime toutes les données du formulaire
+ * Appel : lors de l'appui sur le bouton "Annulation"
+ */
 document.getElementById("annulation").onclick = function () {
     document.getElementById("formulaire").reset();
     document.getElementById("resume").innerText = "";
     indexModifie = null;
 };
 
+/* Affiche les valeurs dans le formulaire
+ * Appel : lors de l'appui sur le bouton "Modifier"
+ */
 function afficherValeurs () {
     let select = document.getElementById("select").value;
     let index = trouverIndex(select);
@@ -114,11 +139,9 @@ function afficherValeurs () {
     for (let carac in ouvrages[index]) {
         document.getElementById(carac).value = ouvrages[index][carac];
     }
-    //trouver la ligne correspondante
-    //les afficher
-    //après validation changer les valeurs
 }
 
+// Affiche les valeurs insérées dans la textarea
 function afficherTextArea() {
     if(ouvrages.length !== 0) {
         let zoneTexte = document.getElementById("resume");
@@ -132,6 +155,7 @@ function afficherTextArea() {
     }
 }
 
+// Affiche mes valeurs que l'on peut sélectionner en vue de la modification
 function afficherSelect() {
     let selectDOM = document.getElementById("tdSelect");
     let inputDOM = document.getElementById("tdInput");
@@ -160,6 +184,7 @@ function afficherSelect() {
     inputDOM.appendChild(inputModif);
 }
 
+// Retourne l'index dans le tableau "ouvrages[]" de la valeur passée en paramètre
 function trouverIndex(valeurATrouver) {
     let index = 0;
     let iteration = 0;
