@@ -76,6 +76,7 @@ window.onload = function() {
             tmp.appendChild(tdNb);
 
             let tdDispo = document.createElement("td");
+            console.log(oeuvre['Disponibilite']);
             if (oeuvre["Disponibilite"] === true) {
                 tdDispo.innerText="Oui";
             } else {
