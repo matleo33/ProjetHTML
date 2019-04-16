@@ -1,93 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Rapport - TD1</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Rapport - TD1</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+<body>
+<div>
+  <div class="centered">
+    <!--Présentation-->
+    <table class="centeredTable">
+      <tr>
+        <td><img src="../img/miage.png" alt="logo miage" /></td>
+        <td><img src="../img/u-bordeaux.jpg" alt="logo u-bordeaux" /></td>
+      </tr>
+    </table>
+
+    <h1 class="marged">Rapport de projet</h1>
+    <p>Amaury DEGUILHEM / Mathieu LEOTHAUD</p>
+  </div>
+
+  <div class="centeredBody">
     <div>
-      <div class="centered">
-        <!--Présentation-->
-        <table class="centeredTable">
-          <tr>
-            <td><img src="../img/miage.png" alt="logo miage" /></td>
-            <td><img src="../img/u-bordeaux.jpg" alt="logo u-bordeaux" /></td>
-          </tr>
-        </table>
-
-        <h1 class="marged">Rapport de projet</h1>
-        <p>Amaury DEGUILHEM / Mathieu LEOTHAUD</p>
+      <!--Sommaire-->
+      <h2>Sommaire</h2>
+      <a href="#besoin">1. Description du besoin</a></br>
+      <a href="#pres">a. Présentation globale</a></br>
+      <a href="#fonc">b. Fonctionnalités</a></br>
+      <a href="#bilan">2. Retour d'experience</a></br>
+      <a href="#imp">a. Implémentation</a></br>
+      <a href="#prob">b. Problèmes rencontrés</a></br>
+      <a href="#ccl">3. Conclusion</a>
+    </div>
+    <div>
+      <!--Content-->
+      <div id="besoin">
+        <h1>Description du besoin</h1>
+        <h2 id="pres">Présentation globale</h2>
+        <p>
+          Ce projet a pour objectif de mettre en application nos connaissances en HTML, CSS et JavaScript. Il a été
+          effectué dans le cadre du cours de madame Jenny Benois Pineau, enseignante à l'université de Bordeaux et
+          chercheuse au Laboratoire Bordelais de Recherche en Informatique (<a href="https://www.labri.fr/">LaBRI</a>)
+        </p>
+        <p>
+          Le projet consiste en l'implémentation d'une bibliothèque tenant compte des problématiques d'enregistrement
+          des livres et, plus techniquement, de validation des données avant l'envoi d'un formulaire et son traitement
+          en JavaScript.
+        </p>
+        <h2 id="fonc">Fonctionnalités</h2>
+        <p>
+          La première consigne était la création du formulaire de saisie d'un ouvrage dans le catalogue éléctronique
+          d'un bibliothèque. La deuxième était un ensemble de règles CSS a éditer. Enfin, le formulaire
+          d'enregistrement doit prendre en compte différentes règles avant l'enregistrement d'une oeuvre, parmi
+          lesquelles on trouve par exemple le fait que la référence doit contenir au moins une lettre, sinon on doit
+          afficher un message d'erreur.
+        </p>
+        <p>
+          Nous avons voulu aller plus loin avec l'implémentation de la modification d'un attribut : <br />
+          Une liste déroulante s'affiche et, en cas de sélection, charge les attributs de l'oeuvre, qui seront
+          modifiés en cas d'envoi du formulaire.
+        </p>
       </div>
-
-      <div>
-        <!--Sommaire-->
-        <h2>Sommaire</h2>
-        <a href="#besoin">1. Description du besoin</a></br>
-        <a href="#pres">a. Présentation globale</a></br>
-        <a href="#fonc">b. Fonctionnalités</a></br>
-        <a href="#bilan">2. Retour d'experience</a></br>
-        <a href="#imp">a. Implémentation</a></br>
-        <a href="#prob">b. Problèmes rencontrés</a></br>
-        <a href="#ccl">3. Conclusion</a>
-      </div>
-      <div>
-        <!--Content-->
-        <div id="besoin">
-          <h1>Description du besoin</h1>
-          <h2 id="pres">Présentation globale</h2>
-          <p>
-            Ce projet a pour objectif de mettre en application nos connaissances en HTML, CSS et JavaScript. Il a été
-            effectué dans le cadre du cours de madame Jenny Benois Pineau, enseignante à l'université de Bordeaux et
-            chercheuse au Laboratoire Bordelais de Recherche en Informatique (<a href="https://www.labri.fr/">LaBRI</a>)
-          </p>
-          <p>
-            Le projet consiste en l'implémentation d'une bibliothèque tenant compte des problématiques d'enregistrement
-            des livres et, plus techniquement, de validation des données avant l'envoi d'un formulaire et son traitement
-            en JavaScript.
-          </p>
-          <h2 id="fonc">Fonctionnalités</h2>
-          <p>
-            La première consigne était la création du formulaire de saisie d'un ouvrage dans le catalogue éléctronique
-            d'un bibliothèque. La deuxième était un ensemble de règles CSS a éditer. Enfin, le formulaire
-            d'enregistrement doit prendre en compte différentes règles avant l'enregistrement d'une oeuvre, parmi
-            lesquelles on trouve par exemple le fait que la référence doit contenir au moins une lettre, sinon on doit
-            afficher un message d'erreur.
-          </p>
-          <p>
-            Nous avons voulu aller plus loin avec l'implémentation de la modification d'un attribut : <br />
-            Une liste déroulante s'affiche et, en cas de sélection, charge les attributs de l'oeuvre, qui seront
-            modifiés en cas d'envoi du formulaire.
-          </p>
-        </div>
-        <div id="bilan">
-          <h1>Retour d'experience</h1>
-          <h2 id="impl">Implémentation</h2>
-          <p>
-            Pour l'implémentation de l'application, nous nous sommes réparti les charges comme suit : <br />
-            - Amaury a fait la majeure partie du JavaScript, avec Mathieu aidant en cas de problème. <br />
-            - Mathieu a fait la majeure partie du HTML et du CSS, avec Amaury aidant en cas de problème.
-          </p>
-          <h2 id="prob">Problèmes rencontrés</h2>
-          <p>
-            Le problème le plus important que nous ayons rencontré est celui du remplissage de la textarea 
-            affichant les messages d'alerte. En effet, nous n'arrivions pas à afficher les retours charriots en raison
-            d'une incompatibilité entre les sauts de ligne de la textarea et ceux des strings classiques.
-            Nous utilisions pour cela la méthode JavaScript : 
-          </p>
-            <div><code>document.getElementById("resume").innerText = valeur;</code></div>
-          <p>Nous avons réglé ce problème via l'utilisation de la méthode : </p>
-            <div><code>document.getElementById("resume").valeur = valeur;</code></div>
-          <h1 id="ccl">Conclusion</h1>
-          <p>
-            Ce projet a été un succès de notre côté, nous avons réalisé tous les objectifs définis dans la consigne, et sommes 
-            même allés plus loin avec la possibilité de modifier des données. <br/>
-            Nous avons également pu revoir les bases des trois langages de base du web, le HTML, le CSS et le JavaScript.
-            Pour aller encore plus loin, nous pourrions ajouter un langage côté serveur (PHP ou Python par exemple), et permettre
-            le stockage des œuvres dans une base de données, exploitable via le site web.
-          </p>
-        </div>
+      <div id="bilan">
+        <h1>Retour d'experience</h1>
+        <h2 id="impl">Implémentation</h2>
+        <p>
+          Pour l'implémentation de l'application, nous nous sommes réparti les charges comme suit : <br />
+          - Amaury a fait la majeure partie du JavaScript, avec Mathieu aidant en cas de problème. <br />
+          - Mathieu a fait la majeure partie du HTML et du CSS, avec Amaury aidant en cas de problème.
+        </p>
+        <h2 id="prob">Problèmes rencontrés</h2>
+        <p>
+          Le problème le plus important que nous ayons rencontré est celui du remplissage de la textarea
+          affichant les messages d'alerte. En effet, nous n'arrivions pas à afficher les retours charriots en raison
+          d'une incompatibilité entre les sauts de ligne de la textarea et ceux des strings classiques.
+          Nous utilisions pour cela la méthode JavaScript :
+        </p>
+        <div><code>document.getElementById("resume").innerText = valeur;</code></div>
+        <p>Nous avons réglé ce problème via l'utilisation de la méthode : </p>
+        <div><code>document.getElementById("resume").valeur = valeur;</code></div>
+        <h1 id="ccl">Conclusion</h1>
+        <p>
+          Ce projet a été un succès de notre côté, nous avons réalisé tous les objectifs définis dans la consigne, et sommes
+          même allés plus loin avec la possibilité de modifier des données. <br/>
+          Nous avons également pu revoir les bases des trois langages de base du web, le HTML, le CSS et le JavaScript.
+          Pour aller encore plus loin, nous pourrions ajouter un langage côté serveur (PHP ou Python par exemple), et permettre
+          le stockage des œuvres dans une base de données, exploitable via le site web.
+        </p>
       </div>
     </div>
-  </body>
+  </div>
+</div>
+</body>
 </html>

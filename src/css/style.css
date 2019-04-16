@@ -33,6 +33,13 @@ form table tr td {
   text-align: center;
 }
 
+.centeredBody {
+  margin: auto;
+  width: 50%;
+  border: 1px solid grey;
+  padding: 2%;
+}
+
 .centeredTable {
   margin-left: auto;
   margin-right: auto;
