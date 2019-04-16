@@ -23,23 +23,13 @@
       <div class="centered">
         <!--Sommaire-->
         <h2>Sommaire</h2>
-        <ol>
-          <li>
-            <a href="#besoin">Description du besoin</a>
-            <ol>
-              <li><a href="#pres">Présentation globale</a></li>
-              <li><a href="#fonc">Fonctionnalités</a></li>
-            </ol>
-          </li>
-          <li>
-            <a href="#bilan">Retour d'experience</a>
-            <ol>
-              <li><a href="#imp">Implémentation</a></li>
-              <li><a href="#prob">Problèmes rencontrés</a></li>
-            </ol>
-            <li><a href="#ccl">Conclusion</a></li>
-          </li>
-        </ol>
+        <a href="#besoin">1. Description du besoin</a></br>
+        <a href="#pres">a. Présentation globale</a></br>
+        <a href="#fonc">b. Fonctionnalités</a></br>
+        <a href="#bilan">2. Retour d'experience</a></br>
+        <a href="#imp">a. Implémentation</a></br>
+        <a href="#prob">b. Problèmes rencontrés</a></br>
+        <a href="#ccl">3. Conclusion</a>
       </div>
       <div class="centered">
         <!--Content-->
@@ -65,21 +55,37 @@
             afficher un message d'erreur.
           </p>
           <p>
-            Nous avons voulu aller plus loin avec l'implémentation de la modification d'un attribut : <br/>
-            Une liste déroulante s'affiche et, en cas de sélection, charge les attributs de l'oeuvre, qui seront modifiés en cas
-            d'envoi du formulaire. 
+            Nous avons voulu aller plus loin avec l'implémentation de la modification d'un attribut : <br />
+            Une liste déroulante s'affiche et, en cas de sélection, charge les attributs de l'oeuvre, qui seront
+            modifiés en cas d'envoi du formulaire.
           </p>
         </div>
         <div id="bilan">
           <h1>Retour d'experience</h1>
           <h2 id="impl">Implémentation</h2>
           <p>
-            Pour l'implémentation de l'application, nous nous sommes réparti les charges comme suit : <br/>
-            - Amaury a fait la majeure partie du JavaScript, avec Mathieu aidant en cas de problèmes. <br/>
-            - Mathieu a fait la majeure partie du HTML et du CSS, avec Amaury aidant en cas de problèmes.
+            Pour l'implémentation de l'application, nous nous sommes réparti les charges comme suit : <br />
+            - Amaury a fait la majeure partie du JavaScript, avec Mathieu aidant en cas de problème. <br />
+            - Mathieu a fait la majeure partie du HTML et du CSS, avec Amaury aidant en cas de problème.
           </p>
           <h2 id="prob">Problèmes rencontrés</h2>
+          <p>
+            Le problème le plus important que nous ayons rencontré est celui du remplissage de la textarea 
+            affichant les messages d'alerte. En effet, nous n'arrivions pas à afficher les retours charriots en raison
+            d'une incompatibilité entre les sauts de ligne de la textarea et ceux des strings classiques.
+            Nous utilisions pour cela la méthode JavaScript : 
+          </p>
+            <div><code>document.getElementById("resume").innerText = valeur;</code></div>
+          <p>Nous avons réglé ce problème via l'utilisation de la méthode : </p>
+            <div><code>document.getElementById("resume").valeur = valeur;</code></div>
           <h1 id="ccl">Conclusion</h1>
+          <p>
+            Ce projet a été un succès de notre côté, nous avons réalisé tous les objectifs définis dans la consigne, et sommes 
+            même allés plus loin avec la possibilité de modifier des données. <br/>
+            Nous avons également pu revoir les bases des trois langages de base du web, le HTML, le CSS et le JavaScript.
+            Pour aller encore plus loin, nous pourrions ajouter un langage côté serveur (PHP ou Python par exemple), et permettre
+            le stockage des œuvres dans une base de données, exploitable via le site web.
+          </p>
         </div>
       </div>
     </div>
