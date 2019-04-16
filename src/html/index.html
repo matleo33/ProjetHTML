@@ -1,94 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Bibliotheque</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
-<body>
-<form class="cadre" name="formulaire" id="formulaire" onsubmit="return false">
-    <table>
-        <thead><span class="formulaireIntit">Formulaire de saisie d'un ouvrage</span></thead>
-        <tbody>
-        <tr>
-            <td id="tdSelect"></td>
-            <td id="tdInput"></td>
-        </tr>
-        <tr>
-            <td>Référence :</td>
-            <td><input id="Reference" type="text" pattern="\w*[a-zA-Z]\w*" required></td>
-        </tr>
-        <tr>
-            <td>Titre :</td>
-            <td><input id="Titre" type="text" required></td>
-        </tr>
-        <tr>
-            <td>Auteur(s) :</td>
-            <td><input id="Auteur" type="text" required></td>
-        </tr>
-        <tr>
-            <td>Editeur :</td>
-            <td><input id="Editeur" type="text" required></td>
-        </tr>
-        <tr>
-            <td>Edition :</td>
-            <td><input id="Edition" type="text" required></td>
-        </tr>
-        <tr>
-            <td>Année d'édition :</td>
-            <td><input id="AnneeEdition" type="number" required></td>
-        </tr>
-        <tr>
-            <td>ISBN :</td>
-            <td><input id="ISBN" type="number" required></td>
-        </tr>
-        <tr>
-            <td>Nombre d'exemplaires :</td>
-            <td><input id="NbExemplaires" type="number" required></td>
-        </tr>
-        <tr>
-            <td>Disponibilité :</td>
-            <td><input id="Disponibilite" type="checkbox"></td>
-        </tr>
-        <tr>
-            <td>Exclu du prêt :</td>
-            <td><input id="ExcluPret" type="checkbox"></td>
-        </tr>
-        <tr>
-            <td>Commentaires :</td>
-            <td><input id="Commentaire" type="text"></td>
-        </tr>
-        <tr>
-            <td><input id="valider" type="submit" value="Valider la saisie"></td>
-            <td><input id="annulation" type="button" value="Annulation"></td>
-        </tr>
-        <tr>
-            <td colspan="2"><textarea id="resume" disabled="disabled"></textarea></td>
-        </tr>
-        </tbody>
-    </table>
-    <table>
-        <thead>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+  <body>
+    <form class="cadre" name="formulaire" id="formulaire" onsubmit="return false">
+      <div class="centered">
+        <table class="centeredTable">
+          <thead>
+            <span class="formulaireIntit">Formulaire de saisie d'un ouvrage</span>
+          </thead>
+          <tbody>
             <tr>
-                <td>Référence</td>
-                <td>Titre</td>
-                <td>Auteur</td>
-                <td>Editeur</td>
-                <td>Edition</td>
-                <td>Année d'édition</td>
-                <td>ISBN</td>
-                <td>Nombre d'exemplaires</td>
-                <td>Disponibilité</td>
-                <td>Exclusion du prêt</td>
-                <td>Commentaires</td>
+              <td id="tdSelect"></td>
+              <td id="tdInput"></td>
             </tr>
-        </thead>
-        <tbody id="tabOeuvres">
-
-        </tbody>
-    </table>
-</form>
-
-<script type="text/javascript" src="../js/validation.js"></script>
-</body>
+            <tr>
+              <td>Référence :</td>
+              <td><input id="Reference" type="text" pattern="\w*[a-zA-Z]\w*" required /></td>
+            </tr>
+            <tr>
+              <td>Titre :</td>
+              <td><input id="Titre" type="text" required /></td>
+            </tr>
+            <tr>
+              <td>Auteur(s) :</td>
+              <td><input id="Auteur" type="text" required /></td>
+            </tr>
+            <tr>
+              <td>Editeur :</td>
+              <td><input id="Editeur" type="text" required /></td>
+            </tr>
+            <tr>
+              <td>Edition :</td>
+              <td><input id="Edition" type="text" required /></td>
+            </tr>
+            <tr>
+              <td>Année d'édition :</td>
+              <td><input id="AnneeEdition" type="number" required /></td>
+            </tr>
+            <tr>
+              <td>ISBN :</td>
+              <td><input id="ISBN" type="number" required /></td>
+            </tr>
+            <tr>
+              <td>Nombre d'exemplaires :</td>
+              <td><input id="NbExemplaires" type="number" required /></td>
+            </tr>
+            <tr>
+              <td>Disponibilité :</td>
+              <td><input id="Disponibilite" type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td>Exclu du prêt :</td>
+              <td><input id="ExcluPret" type="checkbox" /></td>
+            </tr>
+            <tr>
+              <td>Commentaires :</td>
+              <td><input id="Commentaire" type="text" /></td>
+            </tr>
+            <tr>
+              <td><input id="valider" type="submit" value="Valider la saisie" /></td>
+              <td><input id="annulation" type="button" value="Annulation" /></td>
+            </tr>
+            <tr>
+              <td colspan="2"><textarea cols="40" rows="12" id="resume" disabled="disabled"></textarea></td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="centeredTable">
+          <thead>
+            <tr>
+              <td>Référence</td>
+              <td>Titre</td>
+              <td>Auteur</td>
+              <td>Editeur</td>
+              <td>Edition</td>
+              <td>Année d'édition</td>
+              <td>ISBN</td>
+              <td>Nombre d'exemplaires</td>
+              <td>Disponibilité</td>
+              <td>Exclusion du prêt</td>
+              <td>Commentaires</td>
+            </tr>
+          </thead>
+          <tbody id="tabOeuvres"></tbody>
+        </table>
+      </div>
+    </form>
+    <script type="text/javascript" src="../js/validation.js"></script>
+  </body>
 </html>
